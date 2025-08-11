@@ -10,15 +10,10 @@ XIT_FRAME_OUTPUT_V("output", "$group/Step_3.svelte", Circle)
     .value("y", &Circle::y)
     .value("radius", &Circle::radius);
 
-bool operator==(const Circle& l, const Circle& r)
+struct Sample
 {
-    return l.x == r.x && l.y == r.y && l.radius == r.radius;
-}
-
-using Sample = nil::xit::gtest::Test<
-    nil::xit::gtest::Input<>,
-    nil::xit::gtest::Output<"output"> //
-    >;
+    XIT_OUTPUTS("output");
+};
 
 XIT_TEST_F(Sample, circle, "$group/.")
 {

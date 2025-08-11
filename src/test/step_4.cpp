@@ -15,15 +15,11 @@ XIT_FRAME_TEST_INPUT_V("input", "$group/Step_4Input.svelte", Circle(0.1, 0.1, 0.
     .value("y", &Circle::y)
     .value("radius", &Circle::radius);
 
-bool operator==(const Circle& l, const Circle& r)
+struct Sample
 {
-    return l.x == r.x && l.y == r.y && l.radius == r.radius;
-}
-
-using Sample = nil::xit::gtest::Test<
-    nil::xit::gtest::Input<"input">,
-    nil::xit::gtest::Output<"output"> //
-    >;
+    XIT_INPUTS("input");
+    XIT_OUTPUTS("output");
+};
 
 XIT_TEST_F(Sample, circle, "$group/.")
 {

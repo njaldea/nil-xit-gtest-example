@@ -42,10 +42,11 @@ struct nil::xit::gtest::file_codec<Circle>
     }
 };
 
-using Sample = nil::xit::gtest::Test<
-    nil::xit::gtest::Input<"input">,
-    nil::xit::gtest::Output<"output"> //
-    >;
+struct Sample
+{
+    XIT_INPUTS("input");
+    XIT_OUTPUTS("output");
+};
 
 XIT_TEST_F(Sample, circle, "$group/.")
 {
