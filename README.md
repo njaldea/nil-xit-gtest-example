@@ -1,5 +1,20 @@
 # nil/xit-test example using vcpkg/gtest + svelte
 
+## to build
+
+> ./configure/gcc -ts
+> ninja step_3
+
+## to run
+
+### headless
+
+> ninja step_3_hl
+
+### gui
+
+> ninja step_3_gui
+
 See [example tests](./src/test/CMakeLists.txt) for more info.
 
 - [step 1](./src/test/step_1.cpp)
